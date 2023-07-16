@@ -36,7 +36,7 @@ namespace CarRentalSystem.Infraestructure.Data
                     Id = 3,
                     Model = "Nissan Juke",
                     Category = "Suv",
-                    IsRent = false
+                    IsRent = true
                 },
                 new Car
                 {
