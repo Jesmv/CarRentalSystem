@@ -3,7 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRentalSystem", "CarRentalSystem\CarRentalSystem.csproj", "{D5F6A3FE-1725-4F99-8450-0FD68120925B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarRentalSystem", "CarRentalSystem\CarRentalSystem.csproj", "{D5F6A3FE-1725-4F99-8450-0FD68120925B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{3570BE56-F1B2-41E7-8B81-94429C4AA1A6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{5248757A-1C03-4121-90F2-412203D89516}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infraestructure", "Infraestructure", "{4E1E2D47-A567-4131-B17B-1944E9735791}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{3F0E872B-F800-4F42-A62F-3D1709D8C799}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRentalSystem.Infraestructure.Data", "CarRentalSystem.Infraestructure.Data\CarRentalSystem.Infraestructure.Data.csproj", "{A8337063-EDB4-4973-8978-3953910F4782}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +25,17 @@ Global
 		{D5F6A3FE-1725-4F99-8450-0FD68120925B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5F6A3FE-1725-4F99-8450-0FD68120925B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5F6A3FE-1725-4F99-8450-0FD68120925B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8337063-EDB4-4973-8978-3953910F4782}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8337063-EDB4-4973-8978-3953910F4782}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8337063-EDB4-4973-8978-3953910F4782}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8337063-EDB4-4973-8978-3953910F4782}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D5F6A3FE-1725-4F99-8450-0FD68120925B} = {3570BE56-F1B2-41E7-8B81-94429C4AA1A6}
+		{A8337063-EDB4-4973-8978-3953910F4782} = {4E1E2D47-A567-4131-B17B-1944E9735791}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5147B28E-D687-4704-881D-AFE107E7FAA2}
