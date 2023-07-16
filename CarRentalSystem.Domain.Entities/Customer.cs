@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarRentalSystem.Infraestructure.Data.Models
+namespace CarRentalSystem.Domain.Entities
 {
     public class Customer
     {

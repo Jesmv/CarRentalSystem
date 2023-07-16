@@ -1,6 +1,5 @@
-﻿using CarRentalSystem.Infraestructure.Data.Models;
+﻿using CarRentalSystem.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
 
 namespace CarRentalSystem.Infraestructure.Data
 {
