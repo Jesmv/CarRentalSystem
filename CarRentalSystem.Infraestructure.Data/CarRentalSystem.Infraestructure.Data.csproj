@@ -11,4 +11,9 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="7.0.9" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CarRentalSystem.Domain.Entities\CarRentalSystem.Domain.Entities.csproj" />
+    <ProjectReference Include="..\CarRentalSystem.Domain\CarRentalSystem.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
