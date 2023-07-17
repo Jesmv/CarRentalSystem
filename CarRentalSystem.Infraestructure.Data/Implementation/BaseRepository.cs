@@ -38,9 +38,7 @@ namespace CarRentalSystem.Infraestructure.Data.Implementation
 
         public T GetById(int id)
         {
-#pragma warning disable CS8603 // Possible null reference return.
             return _dbContext.Set<T>().Find(id);
-#pragma warning restore CS8603 // Possible null reference return.
         }
 
         public void Remove(T entity)

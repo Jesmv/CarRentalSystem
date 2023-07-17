@@ -29,7 +29,7 @@ namespace CarRentalSystem.Domain.Core.Services
 
         public Car GetById(int id)
         {
-            throw new NotImplementedException();
+            return _carRepository.GetById(id);
         }
     }
 }

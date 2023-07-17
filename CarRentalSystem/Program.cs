@@ -1,8 +1,10 @@
 using CarRentalSystem.Domain.Core.Services;
+using CarRentalSystem.Domain.Entities;
 using CarRentalSystem.Domain.Interfaces.Repository;
 using CarRentalSystem.Domain.Interfaces.Services;
 using CarRentalSystem.Infraestructure.Data;
 using CarRentalSystem.Infraestructure.Data.Implementation;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 
@@ -13,6 +15,7 @@ builder.Services.AddDbContext<CarRentalDbContext>
 
 builder.Services.AddScoped<ICarRepository, CarRepository>();
 builder.Services.AddScoped<IInventoryService, InventoryService>();
+builder.Services.AddScoped<IPriceService, PriceService>();  
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -42,6 +45,13 @@ app.MapGet("/AvailableCars", (IInventoryService inventory) =>
     return inventory.AvailableCars();
 })
 .WithName("Available Cars")
+.WithOpenApi();
+
+app.MapGet("/Cars/{id}/Price/{days}", ([FromRoute] int id, [FromRoute] int days, IInventoryService inventory) =>
+{
+    return inventory.AvailableCars();
+})
+.WithName("Car Price")
 .WithOpenApi();
 
 app.Run();
