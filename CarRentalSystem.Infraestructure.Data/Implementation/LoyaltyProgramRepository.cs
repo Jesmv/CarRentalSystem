@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace CarRentalSystem.Infraestructure.Data.Implementation
 {
-    public class CustomerRepository : BaseRepository<Customer>, ICustomerRepository
+    public class LoyaltyProgramRepository : BaseRepository<LoyaltyProgram>, ILoyaltyProgramRepository
     {
-        public CustomerRepository(CarRentalDbContext dbContext) : base(dbContext)
+        public LoyaltyProgramRepository(CarRentalDbContext dbContext) : base(dbContext)
         {
         }
     }

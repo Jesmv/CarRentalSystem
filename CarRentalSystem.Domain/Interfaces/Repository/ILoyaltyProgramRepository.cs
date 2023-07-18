@@ -2,7 +2,7 @@
 
 namespace CarRentalSystem.Domain.Interfaces.Repository
 {
-    public interface ICustomerRepository : IBaseRepository<Customer>
+    public interface ILoyaltyProgramRepository : IBaseRepository<LoyaltyProgram>
     {
     }
 }

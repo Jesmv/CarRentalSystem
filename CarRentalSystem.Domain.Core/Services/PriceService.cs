@@ -15,24 +15,16 @@ namespace CarRentalSystem.Domain.Core.Services
         Dictionary<string, IPriceStrategy> calculators = new Dictionary<string, IPriceStrategy>()
         {
             { "Premium", new PremiumPriceStrategy() },
-            { "Premium", new SuvPriceStrategy() },
-            { "Premium", new SmallPriceStrategy() }
+            { "Suv", new SuvPriceStrategy() },
+            { "Small", new SmallPriceStrategy() }
         };
 
         public PriceService() { }
 
-        public double calculateRentalPrice(List<Car> cars, int days)
+        public double calculateRentalPrice(Car car, int days)
         {
-
-            double total = 0;
-
-            foreach (var car in cars)
-            {
-                var calculator = getPriceCalculatorForCar(car);
-                total += calculator.calculatePrice(days);
-            }
-
-            return total;
+            IPriceStrategy calculator = getPriceCalculatorForCar(car);
+            return calculator.calculatePrice(days);
         }
 
         private IPriceStrategy getPriceCalculatorForCar(Car car)

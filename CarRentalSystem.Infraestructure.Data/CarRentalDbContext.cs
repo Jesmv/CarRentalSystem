@@ -47,33 +47,30 @@ namespace CarRentalSystem.Infraestructure.Data
                 }
             };
 
-            List<Customer> customers = new List<Customer>
+            List<LoyaltyProgram> customers = new List<LoyaltyProgram>
             {
-                new Customer
+                new LoyaltyProgram
                 {
                     Id = 1,
-                    Name = "Pepito Palotes",
-                    LoyaltyCard = "N0000001",
-                    TotalLoyaltyPoints = 0,
+                    Category = "Premium",
+                    Points = 5
                 },
-                new Customer
+                new LoyaltyProgram
                 {
                     Id = 2,
-                    Name = "Manolita Palomitas",
-                    LoyaltyCard = "N0000002",
-                    TotalLoyaltyPoints = 0,
+                    Category = "Suv",
+                    Points = 3
                 },
-                new Customer
+                new LoyaltyProgram
                 {
                     Id = 3,
-                    Name = "Bilbo Bolson",
-                    LoyaltyCard = "N0000003",
-                    TotalLoyaltyPoints = 0,
+                    Category = "Small",
+                    Points = 1
                 },
             };
 
             modelBuilder.Entity<Car>().HasData(cars);
-            modelBuilder.Entity<Customer>().HasData(customers);
+            modelBuilder.Entity<LoyaltyProgram>().HasData(customers);
         }
 
     }

@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace CarRentalSystem.Domain.Interfaces.Services
 {
-    public interface IPriceService
+    public interface IReservationService
     {
-        double calculateRentalPrice(Car car, int days);
-
+        ReservationRS ReservationCars(ReservationRQ reservationRQ);
     }
 }

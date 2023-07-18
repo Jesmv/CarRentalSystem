@@ -14,8 +14,10 @@ builder.Services.AddDbContext<CarRentalDbContext>
     (o => o.UseInMemoryDatabase("CarRental"));
 
 builder.Services.AddScoped<ICarRepository, CarRepository>();
+builder.Services.AddScoped<ILoyaltyProgramRepository, LoyaltyProgramRepository>();
 builder.Services.AddScoped<IInventoryService, InventoryService>();
-builder.Services.AddScoped<IPriceService, PriceService>();  
+builder.Services.AddScoped<IPriceService, PriceService>(); 
+builder.Services.AddScoped<IReservationService, ReservationService>();
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -47,11 +49,11 @@ app.MapGet("/AvailableCars", (IInventoryService inventory) =>
 .WithName("Available Cars")
 .WithOpenApi();
 
-app.MapGet("/Cars/{id}/Price/{days}", ([FromRoute] int id, [FromRoute] int days, IInventoryService inventory) =>
+app.MapPost("Reservation", ([FromBody] ReservationRQ reservationRQ, IReservationService reservationService) =>
 {
-    return inventory.AvailableCars();
+    return reservationService.ReservationCars(reservationRQ);
 })
-.WithName("Car Price")
+.WithName("Car Reservation")
 .WithOpenApi();
 
 app.Run();
