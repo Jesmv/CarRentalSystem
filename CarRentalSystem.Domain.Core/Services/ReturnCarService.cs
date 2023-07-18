@@ -29,7 +29,7 @@ namespace CarRentalSystem.Domain.Core.Services
 
             foreach (Car car in returnCarRQ.Cars)
             {
-                if (AllCars.Any(x => x.Id == car.Id && x.IsRent == true)) continue;
+                if (AllCars.Any(x => x.Id == car.Id && x.IsRent != true)) continue;
 
                 double carPrice = _priceService.calculateExtraDayPrice(car, returnCarRQ.ExtraDays);
                 returnCarRS.Cars.Add(car.Model, carPrice);

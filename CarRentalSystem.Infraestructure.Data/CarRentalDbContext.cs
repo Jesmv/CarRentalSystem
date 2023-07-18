@@ -44,6 +44,18 @@ namespace CarRentalSystem.Infraestructure.Data
                     Model = "Seat Ibiza",
                     Category = "Small",
                     IsRent = false
+                },new Car
+                {
+                    Id = 5,
+                    Model = "Mercedes Clase C",
+                    Category = "Premium",
+                    IsRent = false
+                },new Car
+                {
+                    Id = 6,
+                    Model = "Ford Ka",
+                    Category = "Small",
+                    IsRent = false
                 }
             };
 

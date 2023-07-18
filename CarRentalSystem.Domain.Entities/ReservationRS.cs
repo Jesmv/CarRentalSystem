@@ -10,7 +10,7 @@ namespace CarRentalSystem.Domain.Entities
     {
         public string Currency => "Euros";
         public Dictionary<string, double> Cars { get; set; }
-        public double Total { get; set; }
+        public double TotalPrice { get; set; }
         public int LoyaltyPoints { get; set; }
     }
 }
