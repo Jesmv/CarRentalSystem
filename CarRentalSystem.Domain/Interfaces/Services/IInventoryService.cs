@@ -9,8 +9,7 @@ namespace CarRentalSystem.Domain.Interfaces.Services
 {
     public interface IInventoryService
     {
-        List<Car> GetAll();
-        Car GetById(int id);
         List<Car> AvailableCars();
+        List<Car> GetAll();
     }
 }

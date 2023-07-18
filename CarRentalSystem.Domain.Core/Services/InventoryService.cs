@@ -19,17 +19,12 @@ namespace CarRentalSystem.Domain.Core.Services
         }
         public List<Car> AvailableCars()
         {
-            return _carRepository.GetAll().Where(x => x.IsRent == false).ToList();
+            return _carRepository.GetCars().Where(x => x.IsRent == false).ToList();
         }
 
         public List<Car> GetAll()
         {
-            return _carRepository.GetAll().ToList();
-        }
-
-        public Car GetById(int id)
-        {
-            return _carRepository.GetById(id);
+            return _carRepository.GetCars();
         }
     }
 }

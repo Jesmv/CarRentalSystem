@@ -16,5 +16,6 @@ namespace CarRentalSystem.Domain.Interfaces.Repository
         public void AddRange(IEnumerable<T> entities);
         public void Remove(T entity);
         public void RemoveRange(IEnumerable<T> entities);
+        public void Update(T entity);
     }
 }

@@ -10,6 +10,7 @@ namespace CarRentalSystem.Domain.Interfaces.Services
     public interface IPriceService
     {
         double calculateRentalPrice(Car car, int days);
+        double calculateExtraDayPrice(Car car, int extraDays);
 
     }
 }

@@ -5,11 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarRentalSystem.Domain.Interfaces.Repository
+namespace CarRentalSystem.Domain.Interfaces.Services
 {
-    public interface ICarRepository
+    public interface IReturnCarService
     {
-        List<Car> GetCars();
-        void Update(Car car);
+        ReturnCarRS ReturnCarExtraDay(ReturnCarRQ returnCarRQ);
     }
 }

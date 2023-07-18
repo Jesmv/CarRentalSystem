@@ -18,6 +18,7 @@ builder.Services.AddScoped<ILoyaltyProgramRepository, LoyaltyProgramRepository>(
 builder.Services.AddScoped<IInventoryService, InventoryService>();
 builder.Services.AddScoped<IPriceService, PriceService>(); 
 builder.Services.AddScoped<IReservationService, ReservationService>();
+builder.Services.AddScoped<IReturnCarService, ReturnCarService>();
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -56,4 +57,12 @@ app.MapPost("Reservation", ([FromBody] ReservationRQ reservationRQ, IReservation
 .WithName("Car Reservation")
 .WithOpenApi();
 
+app.MapPost("ReturnCar", ([FromBody] ReturnCarRQ returnCarRQ, IReturnCarService returnCar) =>
+{
+    return returnCar.ReturnCarExtraDay(returnCarRQ);
+})
+.WithName("Return car with extra days")
+.WithOpenApi();
+
 app.Run();
+

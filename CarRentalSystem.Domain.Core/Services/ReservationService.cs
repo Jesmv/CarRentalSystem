@@ -28,23 +28,26 @@ namespace CarRentalSystem.Domain.Core.Services
         {
             reservationRS.Cars = new Dictionary<string, double>();
             List<LoyaltyProgram> loyaltyProgram = _loyaltyProgramRepository.GetAll().ToList();
-            List<Car> AllCars = _carRepository.GetAll().ToList();
+            List<Car> AllCars = _carRepository.GetCars().ToList();
 
             foreach (Car car  in reservationRQ.Cars)
             {
-                if (AllCars.Any(x => x.Id == car.Id && x.IsRent == true))
-                {
-                    continue;
-                }
+                if (AllCars.Any(x => x.Id == car.Id && x.IsRent == true)) continue;
 
                 double carPrice = _priceService.calculateRentalPrice(car, reservationRQ.Days);
                 reservationRS.Cars.Add(car.Model, carPrice);
                 reservationRS.Total += carPrice;
                 reservationRS.LoyaltyPoints += loyaltyProgram.First(x => x.Category == car.Category).Points;
-
+                ChangeIsRentValueToCars(car);
             }
 
             return reservationRS;
+        }
+
+        private void ChangeIsRentValueToCars(Car car)
+        {
+            car.IsRent = true;
+            _carRepository.Update(car);
         }
 
        

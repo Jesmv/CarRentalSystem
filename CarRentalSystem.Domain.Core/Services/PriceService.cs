@@ -27,6 +27,12 @@ namespace CarRentalSystem.Domain.Core.Services
             return calculator.calculatePrice(days);
         }
 
+        public double calculateExtraDayPrice(Car car, int extraDays)
+        {
+            IPriceStrategy calculator = getPriceCalculatorForCar(car);
+            return calculator.calculateExtraDays(extraDays);
+        }
+
         private IPriceStrategy getPriceCalculatorForCar(Car car)
         {
             return calculators[car.Category];

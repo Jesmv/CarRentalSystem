@@ -1,4 +1,5 @@
 ﻿using CarRentalSystem.Domain.Interfaces.Repository;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -49,6 +50,21 @@ namespace CarRentalSystem.Infraestructure.Data.Implementation
         public void RemoveRange(IEnumerable<T> entities)
         {
             _dbContext.Set<T>().RemoveRange(entities);
+        }
+
+        public void Update(T entity)
+        {
+            var value = GetKeyByEntity(entity);
+            T original = _dbContext.Set<T>().Find(value);
+            _dbContext.Entry(original).CurrentValues.SetValues(entity);
+            this._dbContext.SaveChanges();
+
+        }
+
+        private object GetKeyByEntity(T entity)
+        {
+            var keyName = _dbContext.Model.FindEntityType(typeof(T)).FindPrimaryKey()?.Properties?.FirstOrDefault()?.Name;
+            return entity.GetType().GetProperty(keyName).GetValue(entity, null);
         }
     }
 }
