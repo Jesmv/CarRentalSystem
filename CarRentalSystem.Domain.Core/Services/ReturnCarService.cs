@@ -33,7 +33,7 @@ namespace CarRentalSystem.Domain.Core.Services
 
                 double carPrice = _priceService.calculateExtraDayPrice(car, returnCarRQ.ExtraDays);
                 returnCarRS.Cars.Add(car.Model, carPrice);
-                returnCarRS.Total += carPrice;
+                returnCarRS.TotalExtraDays += carPrice;
                 ChangeIsRentValueToCars(car);
             }
             return returnCarRS;

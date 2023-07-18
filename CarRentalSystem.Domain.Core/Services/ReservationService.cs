@@ -36,7 +36,7 @@ namespace CarRentalSystem.Domain.Core.Services
 
                 double carPrice = _priceService.calculateRentalPrice(car, reservationRQ.Days);
                 reservationRS.Cars.Add(car.Model, carPrice);
-                reservationRS.Total += carPrice;
+                reservationRS.TotalPrice += carPrice;
                 reservationRS.LoyaltyPoints += loyaltyProgram.First(x => x.Category == car.Category).Points;
                 ChangeIsRentValueToCars(car);
             }
